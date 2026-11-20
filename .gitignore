@@ -30,3 +30,5 @@ pnpm-debug.log*
 next-env.d.ts
 
 /public/videos/*
+# Local Netlify folder
+.netlify

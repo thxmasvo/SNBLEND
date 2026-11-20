@@ -1,10 +1,96 @@
 @import "tailwindcss";
 
+/* SMOOTH SCROLL */
 html {
   scroll-behavior: smooth;
 }
 
+/* BASE */
 body {
   margin: 0;
-  background: #000;
+  background: #080808;
+  color: white;
+  overflow-x: hidden;
+
+  /* Better font rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Prevent tiny scaling issues */
+  text-rendering: optimizeLegibility;
+}
+
+/* GLOBAL BOX SIZING */
+* {
+  box-sizing: border-box;
+}
+
+/* BETTER MEDIA DEFAULTS */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* FORM ELEMENTS */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* LINKS */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* REMOVE BLUE TAP HIGHLIGHT */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* LOGO FADE ANIMATION */
+@keyframes logoFade {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+
+  100% {
+    opacity: 0.04;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-logoFade {
+  animation: logoFade 1.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  will-change: transform, opacity;
+}
+
+/* OPTIONAL PREMIUM SELECTION */
+::selection {
+  background: white;
+  color: black;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080808;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
 }
